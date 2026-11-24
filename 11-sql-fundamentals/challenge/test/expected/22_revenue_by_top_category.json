@@ -1,0 +1,9 @@
+{
+  "ordered": true,
+  "columns": ["category","revenue"],
+  "rows": [
+    ["Electronics","7477.43"],
+    ["Home","2960"],
+    ["Books","334.45"]
+  ]
+}

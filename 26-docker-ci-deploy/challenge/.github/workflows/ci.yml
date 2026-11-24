@@ -1,0 +1,12 @@
+# TODO(4): A CI pipeline for this service, as if challenge/ were the root of its own repo.
+#
+#  - run on pushes to main and on pull requests
+#  - least-privilege token: top-level `permissions: contents: read`
+#  - a `test` job on ubuntu-latest with a postgres:16-alpine service container
+#    (port 5433:5432 + health check options), then:
+#      checkout -> setup-node (Node 22, npm cache) -> npm ci -> npm run lint
+#      -> npm run typecheck -> npm test
+#  - a `docker` job that only runs after `test` passes and builds the image,
+#    tagged with the commit SHA (${{ github.sha }})
+#
+# test/workflow.test.ts parses this file and checks its structure.

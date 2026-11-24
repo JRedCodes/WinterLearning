@@ -1,0 +1,15 @@
+$ kubectl -n kudos get events --sort-by=.lastTimestamp
+LAST SEEN   TYPE      REASON              OBJECT                           MESSAGE
+24m         Normal    ScalingReplicaSet   deployment/kudos-api             Scaled up replica set kudos-api-6d5f7c9b8 from 0 to 2
+24m         Normal    Scheduled           pod/kudos-api-6d5f7c9b8-7xq2k    Successfully assigned kudos/kudos-api-6d5f7c9b8-7xq2k to wl-control-plane
+22m         Warning   Failed              pod/kudos-api-6d5f7c9b8-7xq2k    Error: couldn't find key DB_PASSWORD in Secret kudos/kudos-db
+19m         Normal    Pulled              pod/kudos-api-6d5f7c9b8-7xq2k    Container image "wl-kudos-api:1.0.0" already present on machine
+19m         Normal    Created             pod/kudos-api-6d5f7c9b8-7xq2k    Created container: api
+19m         Normal    Started             pod/kudos-api-6d5f7c9b8-7xq2k    Started container: api
+18m         Warning   BackOff             pod/kudos-api-6d5f7c9b8-7xq2k    Back-off restarting failed container api in pod kudos-api-6d5f7c9b8-7xq2k_kudos(3f1c0a52-8d0e-4c47-a1f2-6f0e9b7d5c11)
+17m         Warning   BackOff             pod/kudos-api-6d5f7c9b8-m4wzp    Back-off restarting failed container api in pod kudos-api-6d5f7c9b8-m4wzp_kudos(9b2d4e61-1c3a-4f0b-b8de-2a7c5e9f0d34)
+# ... Sam raised the memory limit on the live Deployment to 256Mi (kubectl edit, not committed) ...
+9m          Normal    ScalingReplicaSet   deployment/kudos-api             Scaled up replica set kudos-api-5b8c6d4f7 from 0 to 1
+9m          Normal    Started             pod/kudos-api-5b8c6d4f7-qk8vd    Started container: api
+8m58s       Warning   Unhealthy           pod/kudos-api-5b8c6d4f7-qk8vd    Readiness probe failed: HTTP probe failed with statuscode: 404
+2m          Warning   Unhealthy           pod/kudos-api-5b8c6d4f7-qk8vd    Readiness probe failed: HTTP probe failed with statuscode: 404

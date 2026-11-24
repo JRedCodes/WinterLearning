@@ -1,0 +1,12 @@
+{
+  "id": "23",
+  "slug": "api-design",
+  "title": "API Design",
+  "phase": 4,
+  "phaseName": "Production Readiness",
+  "challengeType": "build",
+  "estimateHours": 6,
+  "services": [],
+  "dependsOn": ["03", "07"],
+  "summary": "Spec-first REST design with OpenAPI 3.1: resource modeling, cursor pagination, RFC 9457 errors, idempotency keys, ETags and optimistic concurrency, versioning and evolution."
+}

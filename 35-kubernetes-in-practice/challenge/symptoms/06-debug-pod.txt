@@ -1,0 +1,16 @@
+# Priya patched the live Service selector (kubectl edit, not committed). Endpoints exist now.
+
+$ kubectl -n kudos get endpoints kudos-api
+Warning: v1 Endpoints is deprecated in v1.33+; use discovery.k8s.io/v1 EndpointSlice
+NAME        ENDPOINTS                           AGE
+kudos-api   10.244.0.21:8080,10.244.0.22:8080   58m
+
+$ kubectl -n kudos run debug --rm -it --restart=Never --image=busybox -- sh
+/ # wget -qO- -T 3 http://kudos-api/whoami
+wget: can't connect to remote host (10.96.143.27): Connection refused
+/ # wget -qO- -T 3 http://10.244.0.21:8080/whoami
+wget: can't connect to remote host (10.244.0.21): Connection refused
+/ # wget -qO- -T 3 http://10.244.0.21:3000/whoami
+{"pod":"kudos-api-7f9d8c5b6-2hn4t","version":"1.0.0"}
+/ # exit
+pod "debug" deleted

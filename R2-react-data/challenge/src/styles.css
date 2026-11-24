@@ -1,0 +1,13 @@
+:root { font-family: system-ui, sans-serif; color: #1f2933; background: #f5f7fa; }
+body { margin: 0; }
+.app { max-width: 720px; margin: 0 auto; padding: 1.5rem; }
+form.new-task { display: grid; gap: 0.5rem; background: white; padding: 1rem; border-radius: 8px; margin-bottom: 1rem; }
+.field { display: grid; gap: 0.25rem; }
+.field-error, .error { color: #b91c1c; margin: 0; font-size: 0.9rem; }
+ul.tasks { list-style: none; padding: 0; display: grid; gap: 0.5rem; }
+.task { background: white; border-radius: 6px; padding: 0.75rem; }
+.task h3 { margin: 0; font-size: 1rem; }
+.task [aria-busy="true"] { opacity: 0.6; }
+.meta { margin: 0.25rem 0 0.5rem; color: #52606d; font-size: 0.85rem; }
+.priority-high { color: #b91c1c; font-weight: 600; }
+button { cursor: pointer; }

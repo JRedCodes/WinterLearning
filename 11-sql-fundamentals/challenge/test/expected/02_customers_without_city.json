@@ -1,0 +1,8 @@
+{
+  "ordered": true,
+  "columns": ["id","full_name"],
+  "rows": [
+    ["4","Dev Patel"],
+    ["7","Grace Kim"]
+  ]
+}

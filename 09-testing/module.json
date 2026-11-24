@@ -1,0 +1,12 @@
+{
+  "id": "09",
+  "slug": "testing",
+  "title": "Testing Backends",
+  "phase": 1,
+  "phaseName": "Backend Core",
+  "challengeType": "build",
+  "estimateHours": 7,
+  "services": ["postgres"],
+  "dependsOn": ["06", "07"],
+  "summary": "Write a test suite for a layered wallet service: unit tests with fakes and an injected clock, integration tests against real Postgres, graded by mutation testing."
+}

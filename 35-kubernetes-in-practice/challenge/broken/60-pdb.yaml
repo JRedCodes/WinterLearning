@@ -1,0 +1,3 @@
+# TODO(8): PodDisruptionBudget `kudos-api` (policy/v1) selecting the API pods, so a node
+# drain can never take all replicas down at once. Pick minAvailable or maxUnavailable,
+# and make sure it still ALLOWS evictions when the HPA is at its minimum (2 replicas).

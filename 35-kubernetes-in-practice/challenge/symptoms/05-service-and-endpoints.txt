@@ -1,0 +1,32 @@
+# Readiness was hot-fixed on the live Deployment (kubectl edit, not committed). Pods are 1/1 now.
+
+$ kubectl -n kudos get pods -l app=kudos-api -o wide
+NAME                         READY   STATUS    RESTARTS   AGE   IP            NODE
+kudos-api-7f9d8c5b6-2hn4t    1/1     Running   0          3m    10.244.0.21   wl-control-plane
+kudos-api-7f9d8c5b6-vx7lq    1/1     Running   0          2m    10.244.0.22   wl-control-plane
+
+$ kubectl -n kudos get endpoints kudos-api
+Warning: v1 Endpoints is deprecated in v1.33+; use discovery.k8s.io/v1 EndpointSlice
+NAME        ENDPOINTS   AGE
+kudos-api   <none>      52m
+
+$ kubectl -n kudos describe service kudos-api
+Name:                     kudos-api
+Namespace:                kudos
+Labels:                   app=kudos-api
+                          app.kubernetes.io/part-of=kudos
+Selector:                 app=kudos
+Type:                     ClusterIP
+IP Family Policy:         SingleStack
+IP:                       10.96.143.27
+Port:                     http  80/TCP
+TargetPort:               8080/TCP
+Endpoints:
+Session Affinity:         None
+Events:                   <none>
+
+$ kubectl -n kudos get pods --show-labels
+NAME                         READY   STATUS    LABELS
+kudos-api-7f9d8c5b6-2hn4t    1/1     Running   app.kubernetes.io/part-of=kudos,app=kudos-api,pod-template-hash=7f9d8c5b6
+kudos-api-7f9d8c5b6-vx7lq    1/1     Running   app.kubernetes.io/part-of=kudos,app=kudos-api,pod-template-hash=7f9d8c5b6
+postgres-0                   1/1     Running   app=postgres,apps.kubernetes.io/pod-index=0,controller-revision-hash=postgres-6c9f7b8d5,statefulset.kubernetes.io/pod-name=postgres-0

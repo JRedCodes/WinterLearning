@@ -1,0 +1,8 @@
+# TODO(9a): the Deployment, templated from your FIXED broken/20-api.yaml.
+#   - name: include "kudos-api.fullname"; labels: include "kudos-api.labels"
+#   - replicas ONLY when autoscaling is disabled (wrap it in an if on autoscaling.enabled)
+#   - selector.matchLabels and pod template labels: include "kudos-api.selectorLabels"
+#   - image "<repository>:<tag>", where an empty tag falls back to .Chart.AppVersion
+#   - containerPort from values, named http; probes on port http (/readyz, /healthz)
+#   - envFrom the chart's ConfigMap; DB_PASSWORD from the existing Secret named in values
+#   - resources, podSecurityContext and securityContext via toYaml from values

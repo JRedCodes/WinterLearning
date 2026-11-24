@@ -1,0 +1,22 @@
+# No ingressClassName: the cluster's DEFAULT IngressClass handles it (cloud-provider-kind
+# locally, the platform's controller in staging). Set one explicitly if your cluster has several.
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: kudos-api
+  namespace: kudos
+  labels:
+    app: kudos-api
+    app.kubernetes.io/part-of: kudos
+spec:
+  rules:
+    - host: kudos.localtest.me
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: kudos-api
+                port:
+                  number: 3000

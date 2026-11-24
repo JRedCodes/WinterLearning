@@ -1,0 +1,74 @@
+# Snapshot of GET /metrics from pod checkout-7f4c2a-b5n8v (version 2.14.0) at 2026-10-14T14:20:00Z
+# Counters are cumulative since the pod started (2026-10-14T13:57:00Z).
+# Note: requests the client abandons never reach 'finish', so they are NOT in
+# http_request_duration_seconds. They only show up in the access logs.
+# HELP http_request_duration_seconds HTTP request latency in seconds
+# TYPE http_request_duration_seconds histogram
+http_request_duration_seconds_bucket{le="0.005",method="GET",route="/orders/:id",status_code="200"} 410
+http_request_duration_seconds_bucket{le="0.01",method="GET",route="/orders/:id",status_code="200"} 1190
+http_request_duration_seconds_bucket{le="0.025",method="GET",route="/orders/:id",status_code="200"} 2050
+http_request_duration_seconds_bucket{le="0.05",method="GET",route="/orders/:id",status_code="200"} 2093
+http_request_duration_seconds_bucket{le="0.1",method="GET",route="/orders/:id",status_code="200"} 2101
+http_request_duration_seconds_bucket{le="0.25",method="GET",route="/orders/:id",status_code="200"} 2102
+http_request_duration_seconds_bucket{le="0.5",method="GET",route="/orders/:id",status_code="200"} 2102
+http_request_duration_seconds_bucket{le="1",method="GET",route="/orders/:id",status_code="200"} 2102
+http_request_duration_seconds_bucket{le="2.5",method="GET",route="/orders/:id",status_code="200"} 2102
+http_request_duration_seconds_bucket{le="5",method="GET",route="/orders/:id",status_code="200"} 2102
+http_request_duration_seconds_bucket{le="10",method="GET",route="/orders/:id",status_code="200"} 2102
+http_request_duration_seconds_bucket{le="+Inf",method="GET",route="/orders/:id",status_code="200"} 2102
+http_request_duration_seconds_sum{method="GET",route="/orders/:id",status_code="200"} 24.9
+http_request_duration_seconds_count{method="GET",route="/orders/:id",status_code="200"} 2102
+http_request_duration_seconds_bucket{le="0.005",method="POST",route="/checkout",status_code="201"} 0
+http_request_duration_seconds_bucket{le="0.01",method="POST",route="/checkout",status_code="201"} 0
+http_request_duration_seconds_bucket{le="0.025",method="POST",route="/checkout",status_code="201"} 0
+http_request_duration_seconds_bucket{le="0.05",method="POST",route="/checkout",status_code="201"} 0
+http_request_duration_seconds_bucket{le="0.1",method="POST",route="/checkout",status_code="201"} 0
+http_request_duration_seconds_bucket{le="0.25",method="POST",route="/checkout",status_code="201"} 52
+http_request_duration_seconds_bucket{le="0.5",method="POST",route="/checkout",status_code="201"} 230
+http_request_duration_seconds_bucket{le="1",method="POST",route="/checkout",status_code="201"} 371
+http_request_duration_seconds_bucket{le="2.5",method="POST",route="/checkout",status_code="201"} 552
+http_request_duration_seconds_bucket{le="5",method="POST",route="/checkout",status_code="201"} 690
+http_request_duration_seconds_bucket{le="10",method="POST",route="/checkout",status_code="201"} 801
+http_request_duration_seconds_bucket{le="+Inf",method="POST",route="/checkout",status_code="201"} 905
+http_request_duration_seconds_sum{method="POST",route="/checkout",status_code="201"} 4117.6
+http_request_duration_seconds_count{method="POST",route="/checkout",status_code="201"} 905
+# HELP upstream_request_duration_seconds Latency of calls to other services
+# TYPE upstream_request_duration_seconds histogram
+upstream_request_duration_seconds_bucket{le="0.1",dependency="payments-gateway"} 140
+upstream_request_duration_seconds_bucket{le="0.25",dependency="payments-gateway"} 925
+upstream_request_duration_seconds_bucket{le="1",dependency="payments-gateway"} 958
+upstream_request_duration_seconds_bucket{le="5",dependency="payments-gateway"} 960
+upstream_request_duration_seconds_bucket{le="30",dependency="payments-gateway"} 960
+upstream_request_duration_seconds_bucket{le="+Inf",dependency="payments-gateway"} 960
+upstream_request_duration_seconds_sum{dependency="payments-gateway"} 149.2
+upstream_request_duration_seconds_count{dependency="payments-gateway"} 960
+upstream_request_duration_seconds_bucket{le="0.1",dependency="risk-service"} 0
+upstream_request_duration_seconds_bucket{le="0.25",dependency="risk-service"} 180
+upstream_request_duration_seconds_bucket{le="1",dependency="risk-service"} 390
+upstream_request_duration_seconds_bucket{le="5",dependency="risk-service"} 640
+upstream_request_duration_seconds_bucket{le="30",dependency="risk-service"} 960
+upstream_request_duration_seconds_bucket{le="+Inf",dependency="risk-service"} 960
+upstream_request_duration_seconds_sum{dependency="risk-service"} 3968.4
+upstream_request_duration_seconds_count{dependency="risk-service"} 960
+# HELP upstream_inflight_requests Requests currently in flight to each dependency
+# TYPE upstream_inflight_requests gauge
+upstream_inflight_requests{dependency="payments-gateway"} 0
+upstream_inflight_requests{dependency="risk-service"} 50
+# HELP upstream_queued_requests Requests waiting for a free socket to each dependency
+# TYPE upstream_queued_requests gauge
+upstream_queued_requests{dependency="payments-gateway"} 0
+upstream_queued_requests{dependency="risk-service"} 1874
+# HELP checkouts_total Checkout attempts by outcome
+# TYPE checkouts_total counter
+checkouts_total{outcome="success"} 905
+checkouts_total{outcome="declined"} 55
+checkouts_total{outcome="error"} 0
+# HELP nodejs_eventloop_lag_seconds Lag of event loop in seconds.
+# TYPE nodejs_eventloop_lag_seconds gauge
+nodejs_eventloop_lag_seconds 0.0042
+# HELP process_resident_memory_bytes Resident memory size in bytes.
+# TYPE process_resident_memory_bytes gauge
+process_resident_memory_bytes 201326592
+# HELP process_cpu_seconds_total Total user and system CPU time spent in seconds.
+# TYPE process_cpu_seconds_total counter
+process_cpu_seconds_total 41.07

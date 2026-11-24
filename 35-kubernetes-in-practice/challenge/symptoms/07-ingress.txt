@@ -1,0 +1,19 @@
+# Service targetPort hot-fixed too (not committed). In-cluster calls to http://kudos-api/ work now.
+
+$ kubectl -n kudos get ingress kudos-api
+NAME        CLASS    HOSTS                ADDRESS      PORTS   AGE
+kudos-api   <none>   kudos.localtest.me   172.18.0.5   80      61m
+
+$ curl -si -H 'Host: kudos.localtest.me' http://172.18.0.5/whoami
+HTTP/1.1 503 Service Unavailable
+content-length: 19
+content-type: text/plain
+
+no healthy upstream
+
+$ kubectl -n kudos get svc kudos-api
+NAME        TYPE        CLUSTER-IP     EXTERNAL-IP   PORT(S)   AGE
+kudos-api   ClusterIP   10.96.143.27   <none>        80/TCP    62m
+
+$ kubectl -n kudos get ingress kudos-api -o jsonpath='{.spec.rules[0].http.paths[0].backend}'
+{"service":{"name":"kudos-api","port":{"number":3000}}}

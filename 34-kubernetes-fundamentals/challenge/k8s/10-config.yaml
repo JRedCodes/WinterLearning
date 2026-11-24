@@ -1,0 +1,10 @@
+# TODO(2): Configuration for the API (and Postgres), as TWO documents separated by `---`:
+#
+#   1. ConfigMap `kudos-config`: the non-secret settings, using the env var names that
+#      src/config.ts reads (DB_HOST, DB_PORT, DB_NAME, DB_USER, and anything else you want
+#      to set such as LOG_LEVEL / NODE_ENV). All values must be strings: quote numbers.
+#      DB_HOST is the DNS name of the postgres Service you'll create in TODO 5.
+#
+#   2. Secret `kudos-db` (type Opaque) with a DB_PASSWORD key. Use `stringData` so you can
+#      write plain text (the API server base64-encodes it into `data` for you).
+#      This is a throwaway local password. Real secrets never go into git.

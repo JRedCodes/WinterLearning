@@ -1,0 +1,12 @@
+{
+  "id": "R2",
+  "slug": "react-data",
+  "title": "React + Your API",
+  "phase": "R",
+  "phaseName": "React Track",
+  "challengeType": "build",
+  "estimateHours": 6,
+  "services": [],
+  "dependsOn": ["R1", "23"],
+  "summary": "A typed API client, TanStack Query hooks with optimistic updates and cursor pagination, and zod-validated forms for a tasks frontend."
+}

@@ -1,0 +1,2 @@
+# TODO(9c): the HorizontalPodAutoscaler (autoscaling/v2), only when autoscaling is enabled.
+#   min/max replicas and the CPU utilization target come from values.

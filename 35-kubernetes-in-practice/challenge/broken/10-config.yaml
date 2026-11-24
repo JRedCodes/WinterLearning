@@ -1,0 +1,30 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: kudos-config
+  namespace: kudos
+  labels:
+    app.kubernetes.io/part-of: kudos
+data:
+  NODE_ENV: "production"
+  LOG_LEVEL: "info"
+  PORT: "3000"
+  DB_HOST: "postgres"
+  DB_PORT: "5432"
+  DB_NAME: "kudos"
+  DB_USER: "kudos"
+  SHUTDOWN_DELAY_MS: "5000"
+  SHUTDOWN_TIMEOUT_MS: "10000"
+---
+# In staging this Secret is synced from the cloud secret manager. Locally it's a throwaway
+# value that matches local/postgres.yaml.
+apiVersion: v1
+kind: Secret
+metadata:
+  name: kudos-db
+  namespace: kudos
+  labels:
+    app.kubernetes.io/part-of: kudos
+type: Opaque
+stringData:
+  db-password: "local-dev-only-not-a-real-secret"

@@ -1,0 +1,12 @@
+{
+  "ordered": true,
+  "columns": ["category","product","price","category_avg"],
+  "rows": [
+    ["Accessories","Mechanical Keyboard","89","52.83"],
+    ["Fiction","The Long Winter","18.5","15.75"],
+    ["Furniture","Standing Desk","549","424"],
+    ["Kitchen","Espresso Machine","349","219"],
+    ["Laptops","Gaming Laptop 16","1899","1599"],
+    ["Programming","Designing Data Systems","45","42.25"]
+  ]
+}

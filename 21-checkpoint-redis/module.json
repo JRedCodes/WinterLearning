@@ -1,0 +1,12 @@
+{
+  "id": "21",
+  "slug": "checkpoint-redis",
+  "title": "Checkpoint: Redis",
+  "phase": 3,
+  "phaseName": "Redis & Async Work",
+  "challengeType": "build",
+  "estimateHours": 7,
+  "services": ["postgres", "redis"],
+  "dependsOn": ["18", "19", "20"],
+  "summary": "Build a link preview service from scratch that combines cache-aside reads, per-API-key rate limiting, deduplicated background jobs with retries, and Postgres as the source of truth."
+}

@@ -1,0 +1,12 @@
+{
+  "id": "29",
+  "slug": "reliability-scaling",
+  "title": "Reliability & Scaling",
+  "phase": 5,
+  "phaseName": "Systems & Scale",
+  "challengeType": "build",
+  "estimateHours": 7,
+  "services": [],
+  "dependsOn": ["19", "24"],
+  "summary": "Timeouts, retries with backoff and budgets, circuit breakers, bulkheads, load shedding and graceful degradation, applied to an aggregator API that must stay fast while its dependencies fail."
+}

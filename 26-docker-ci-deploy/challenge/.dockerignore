@@ -1,0 +1,3 @@
+# TODO(2): Keep the build context small and secret-free.
+# One pattern per line. At minimum: dependencies, build output, git metadata and env files.
+# Careful: do NOT ignore package.json or package-lock.json, the Dockerfile needs them.

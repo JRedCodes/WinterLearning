@@ -1,0 +1,8 @@
+{
+  "ordered": false,
+  "columns": ["product_id","customer_id","rating","body"],
+  "rows": [
+    ["11","3","2","Squeaks after a month."],
+    ["17","3","5","Crisp panel."]
+  ]
+}

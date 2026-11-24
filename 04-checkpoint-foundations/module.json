@@ -1,0 +1,12 @@
+{
+  "id": "04",
+  "slug": "checkpoint-foundations",
+  "title": "Checkpoint: Foundations",
+  "phase": 0,
+  "phaseName": "Foundations",
+  "challengeType": "build",
+  "estimateHours": 5,
+  "services": [],
+  "dependsOn": ["01", "02", "03"],
+  "summary": "Design and build kv-lite, an HTTP key-value store with TTLs, atomic file persistence, debounced flushing and graceful shutdown, in strict TypeScript on node:http."
+}

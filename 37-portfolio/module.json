@@ -1,0 +1,12 @@
+{
+  "id": "37",
+  "slug": "portfolio",
+  "title": "Portfolio & Job Readiness",
+  "phase": 7,
+  "phaseName": "Capstone & Portfolio",
+  "challengeType": "docs",
+  "estimateHours": 4,
+  "services": [],
+  "dependsOn": ["36"],
+  "summary": "Deploy the capstone publicly, write a project README that sells it, turn your modules into impact-focused resume bullets, and prepare STAR stories for interviews."
+}

@@ -1,0 +1,5 @@
+# TODO(1): A Namespace called `kudos`.
+#
+# Everything else in this folder lives inside it (set metadata.namespace on every object).
+# This file is named 00-... on purpose: `kubectl apply -f k8s/` applies files in
+# alphabetical order, and the namespace must exist before anything is created in it.

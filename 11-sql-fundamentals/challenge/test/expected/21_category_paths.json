@@ -1,0 +1,17 @@
+{
+  "ordered": true,
+  "columns": ["id","path","depth"],
+  "rows": [
+    ["9","Books","1"],
+    ["10","Books > Fiction","2"],
+    ["11","Books > Programming","2"],
+    ["1","Electronics","1"],
+    ["2","Electronics > Computers","2"],
+    ["4","Electronics > Computers > Accessories","3"],
+    ["3","Electronics > Computers > Laptops","3"],
+    ["5","Electronics > Phones","2"],
+    ["6","Home","1"],
+    ["8","Home > Furniture","2"],
+    ["7","Home > Kitchen","2"]
+  ]
+}

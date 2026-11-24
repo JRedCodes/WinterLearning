@@ -1,0 +1,12 @@
+{
+  "id": "13",
+  "slug": "node-postgres",
+  "title": "Postgres from Node",
+  "phase": 2,
+  "phaseName": "Postgres",
+  "challengeType": "scaffold",
+  "estimateHours": 7,
+  "services": ["postgres"],
+  "dependsOn": ["06", "12"],
+  "summary": "Connection pools, parameterized queries, row mapping, repositories, transactions and migrations with node-postgres."
+}

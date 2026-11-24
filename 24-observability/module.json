@@ -1,0 +1,12 @@
+{
+  "id": "24",
+  "slug": "observability",
+  "title": "Observability",
+  "phase": 4,
+  "phaseName": "Production Readiness",
+  "challengeType": "debug",
+  "estimateHours": 6,
+  "services": [],
+  "dependsOn": ["06", "07"],
+  "summary": "Structured logs with request context, Prometheus metrics without cardinality explosions, health probes, trace propagation, SLOs, and writing a blameless postmortem from real incident data."
+}

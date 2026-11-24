@@ -1,0 +1,5 @@
+-- 002 · Organizations, users and memberships
+--
+-- TODO(2): create `organizations`, `users` and `memberships` exactly as specified in
+-- CHALLENGE.md (column names, types, NOT NULL, defaults, UNIQUE, CHECK, foreign keys
+-- and their ON DELETE behaviour). Remember the updated_at trigger on users.

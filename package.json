@@ -1,0 +1,11 @@
+{
+  "name": "winter-learning",
+  "private": true,
+  "description": "A self-paced backend/infra learning sprint. Each top-level folder is a standalone module.",
+  "type": "module",
+  "engines": { "node": ">=22" },
+  "scripts": {
+    "progress": "node scripts/progress.mjs",
+    "next": "node scripts/progress.mjs next"
+  }
+}

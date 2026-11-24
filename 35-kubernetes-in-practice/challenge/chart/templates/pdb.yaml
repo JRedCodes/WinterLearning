@@ -1,0 +1,2 @@
+# TODO(9d): the PodDisruptionBudget (policy/v1), only when enabled in values,
+#   selecting this release's pods with the selector labels.

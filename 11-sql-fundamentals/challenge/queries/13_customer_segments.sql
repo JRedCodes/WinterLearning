@@ -1,0 +1,12 @@
+-- Exercise 13 · CTEs (WITH)
+-- Segment every customer by lifetime value (LTV) = total spent on NON-cancelled orders.
+--   'vip'         LTV >= 1500
+--   'regular'     LTV >= 200
+--   'occasional'  LTV >  0
+--   'none'        no non-cancelled orders at all (their LTV is 0)
+-- Columns:  full_name
+--           lifetime_value  (0 for customers without orders, never NULL)
+--           segment
+-- Order:    lifetime_value descending, then full_name A→Z.
+-- Use a CTE to compute per-customer totals first, then classify in the outer query.
+

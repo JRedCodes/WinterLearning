@@ -1,0 +1,12 @@
+{
+  "id": "34",
+  "slug": "kubernetes-fundamentals",
+  "title": "Kubernetes Fundamentals",
+  "phase": 6,
+  "phaseName": "Event Streaming & Orchestration",
+  "challengeType": "build",
+  "estimateHours": 7,
+  "services": [],
+  "dependsOn": ["26", "24"],
+  "summary": "Pods, Deployments, Services, ConfigMaps, Secrets, probes, resources and rollouts: deploy an API, its Postgres and a migration Job to a local kind cluster with manifests you write and validate."
+}

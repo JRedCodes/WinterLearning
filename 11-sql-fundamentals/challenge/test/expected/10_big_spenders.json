@@ -1,0 +1,10 @@
+{
+  "ordered": true,
+  "columns": ["full_name","total_spent"],
+  "rows": [
+    ["Hugo Lefevre","1858.98"],
+    ["Farid Haddad","1605.5"],
+    ["Alice Martin","1446.99"],
+    ["Bob Chen","1385"]
+  ]
+}

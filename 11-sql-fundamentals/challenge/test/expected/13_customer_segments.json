@@ -1,0 +1,18 @@
+{
+  "ordered": true,
+  "columns": ["full_name","lifetime_value","segment"],
+  "rows": [
+    ["Hugo Lefevre","2706.98","vip"],
+    ["Alice Martin","2194.96","vip"],
+    ["Farid Haddad","1605.5","vip"],
+    ["Bob Chen","1485","regular"],
+    ["Dev Patel","1226.5","regular"],
+    ["Emma Schmidt","831.46","regular"],
+    ["Carla Rossi","687","regular"],
+    ["Ines Alves","134.48","occasional"],
+    ["Grace Kim","0","none"],
+    ["Jon Berg","0","none"],
+    ["Kai Weber","0","none"],
+    ["Lena Novak","0","none"]
+  ]
+}

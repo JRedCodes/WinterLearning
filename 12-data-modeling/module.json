@@ -1,0 +1,12 @@
+{
+  "id": "12",
+  "slug": "data-modeling",
+  "title": "Data Modeling & Migrations",
+  "phase": 2,
+  "phaseName": "Postgres",
+  "challengeType": "build",
+  "estimateHours": 6,
+  "services": ["postgres"],
+  "dependsOn": ["11"],
+  "summary": "Design relational schemas that make invalid data impossible (keys, normalization, constraints including exclusion constraints, the right data types) and evolve them safely with migrations."
+}

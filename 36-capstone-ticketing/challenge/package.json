@@ -1,0 +1,36 @@
+{
+  "name": "wl-36-capstone-ticketing",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "tsx watch api/src/server.ts",
+    "start": "tsx api/src/server.ts",
+    "worker": "tsx api/src/worker.ts",
+    "migrate": "tsx api/src/db/runMigrations.ts",
+    "build": "tsc -p api/tsconfig.build.json",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "bullmq": "^6.7.8",
+    "express": "^5.3.0",
+    "ioredis": "^6.1.0",
+    "kafkajs": "^2.2.4",
+    "pg": "^8.23.1",
+    "pino": "^10.4.0",
+    "prom-client": "^15.1.3",
+    "zod": "^4.6.7"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.6",
+    "@types/node": "^26.6.6",
+    "@types/pg": "^8.23.1",
+    "@types/supertest": "^7.2.1",
+    "supertest": "^7.3.2",
+    "tsx": "^4.23.15",
+    "typescript": "^7.0.2",
+    "vitest": "^5.1.1",
+    "yaml": "^2.9.1"
+  }
+}

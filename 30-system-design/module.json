@@ -1,0 +1,12 @@
+{
+  "id": "30",
+  "slug": "system-design",
+  "title": "System Design",
+  "phase": 5,
+  "phaseName": "Systems & Scale",
+  "challengeType": "docs",
+  "estimateHours": 10,
+  "services": [],
+  "dependsOn": ["18", "19", "28", "29"],
+  "summary": "A repeatable framework for designing systems (requirements, estimates, API, data model, high-level design, deep dives, trade-offs), the building blocks they're made of, and five full design write-ups."
+}

@@ -1,0 +1,56 @@
+# Default values for the kudos-api chart. Override per environment with -f or --set.
+
+nameOverride: ""
+fullnameOverride: ""
+
+# Only used when autoscaling.enabled is false (the HPA owns the count otherwise).
+replicaCount: 2
+
+image:
+  repository: wl-kudos-api
+  # Empty = use the chart's appVersion.
+  tag: ""
+  pullPolicy: IfNotPresent
+
+# The port the app listens on. Rendered into the ConfigMap as PORT and used as containerPort.
+containerPort: 3000
+
+service:
+  type: ClusterIP
+  port: 80
+
+# Non-secret env vars, rendered into the ConfigMap. Keys must be names src/config.ts reads.
+config:
+  NODE_ENV: production
+  LOG_LEVEL: info
+  DB_HOST: postgres
+  DB_PORT: "5432"
+  DB_NAME: kudos
+  DB_USER: kudos
+  SHUTDOWN_DELAY_MS: "5000"
+  SHUTDOWN_TIMEOUT_MS: "10000"
+
+# The chart does NOT create the DB password Secret: it's created out-of-band
+# (kubectl create secret / External Secrets) and referenced here.
+database:
+  existingSecret: kudos-db
+  passwordKey: DB_PASSWORD
+
+podSecurityContext:
+  runAsNonRoot: true
+  runAsUser: 1000
+  runAsGroup: 1000
+  seccompProfile:
+    type: RuntimeDefault
+
+securityContext:
+  allowPrivilegeEscalation: false
+  readOnlyRootFilesystem: true
+  capabilities:
+    drop: ["ALL"]
+
+# TODO(9): add the values your templates need, with sensible defaults:
+#   resources:            requests + limits (what did the incident teach you about memory?)
+#   ingress:              enabled, className, host, annotations
+#   autoscaling:          enabled, minReplicas (2), maxReplicas (10), targetCPUUtilizationPercentage (70)
+#   podDisruptionBudget:  enabled, minAvailable

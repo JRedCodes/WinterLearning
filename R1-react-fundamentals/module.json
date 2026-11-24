@@ -1,0 +1,12 @@
+{
+  "id": "R1",
+  "slug": "react-fundamentals",
+  "title": "React Fundamentals",
+  "phase": "R",
+  "phaseName": "React Track",
+  "challengeType": "scaffold",
+  "estimateHours": 6,
+  "services": [],
+  "dependsOn": ["02"],
+  "summary": "Components, props, state, effects, reducers, custom hooks and user-centric testing, by building an accessible Kanban-lite board."
+}

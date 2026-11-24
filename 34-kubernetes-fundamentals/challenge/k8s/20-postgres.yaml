@@ -1,0 +1,12 @@
+# TODO(5): Postgres inside the cluster (fine for local dev; see DECISIONS.md for prod).
+#
+#   1. Service `postgres`: headless (clusterIP: None), port 5432, selecting the postgres pods.
+#   2. StatefulSet `postgres` (serviceName: postgres, 1 replica, image postgres:16-alpine):
+#        - env POSTGRES_PASSWORD from the kudos-db Secret (same key the API uses)
+#        - env POSTGRES_USER / POSTGRES_DB from the ConfigMap (DB_USER / DB_NAME) so they
+#          can't drift from what the API connects with
+#        - env PGDATA=/var/lib/postgresql/data/pgdata
+#        - a volumeClaimTemplate (ReadWriteOnce, 1Gi) mounted at /var/lib/postgresql/data
+#        - readinessProbe that runs pg_isready
+#        - resource requests and a memory limit
+#   Use labels that are DIFFERENT from the API's, so the API Service never selects Postgres.

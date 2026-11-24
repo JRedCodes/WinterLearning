@@ -1,0 +1,12 @@
+{
+  "id": "18",
+  "slug": "caching",
+  "title": "Caching",
+  "phase": 3,
+  "phaseName": "Redis & Async Work",
+  "challengeType": "scaffold",
+  "estimateHours": 6,
+  "services": ["postgres", "redis"],
+  "dependsOn": ["13", "17"],
+  "summary": "Cache-aside with Redis done properly: TTLs with jitter, invalidation on write, negative caching, stampede protection by request coalescing, fail-open behavior and hit-rate metrics."
+}

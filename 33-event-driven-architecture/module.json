@@ -1,0 +1,12 @@
+{
+  "id": "33",
+  "slug": "event-driven-architecture",
+  "title": "Event-Driven Architecture",
+  "phase": 6,
+  "phaseName": "Event Streaming & Orchestration",
+  "challengeType": "debug",
+  "estimateHours": 7,
+  "services": ["postgres", "kafka"],
+  "dependsOn": ["32", "15"],
+  "summary": "Events vs commands, the dual-write problem, transactional outbox and inbox, sagas, dead-letter topics and schema evolution: fix an orders/payments system that loses, duplicates and chokes on events."
+}

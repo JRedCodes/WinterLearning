@@ -1,0 +1,6 @@
+# TODO(7): HorizontalPodAutoscaler `kudos-api` (autoscaling/v2) for the kudos-api Deployment:
+#   minReplicas 2, maxReplicas 10, scale on average CPU utilization 70%.
+#
+# Utilization is measured against the container's CPU *request*, so the Deployment must
+# keep one. Once the HPA owns the replica count, REMOVE `spec.replicas` from 20-api.yaml,
+# otherwise every `kubectl apply` resets the count the HPA chose.

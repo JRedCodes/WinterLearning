@@ -1,0 +1,12 @@
+{
+  "id": "10",
+  "slug": "checkpoint-backend-core",
+  "title": "Checkpoint: Backend Core",
+  "phase": 1,
+  "phaseName": "Backend Core",
+  "challengeType": "build",
+  "estimateHours": 8,
+  "services": [],
+  "dependsOn": ["05", "06", "07", "08", "09"],
+  "summary": "Build a habit tracker API from a spec on your own: layered architecture, zod validation, domain errors, typed config, request ids and streaks computed with an injected clock."
+}

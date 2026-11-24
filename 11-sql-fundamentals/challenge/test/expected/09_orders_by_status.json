@@ -1,0 +1,11 @@
+{
+  "ordered": true,
+  "columns": ["status","orders"],
+  "rows": [
+    ["delivered","12"],
+    ["paid","3"],
+    ["shipped","3"],
+    ["cancelled","2"],
+    ["pending","2"]
+  ]
+}

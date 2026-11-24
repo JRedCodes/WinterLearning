@@ -1,0 +1,9 @@
+{
+  "ordered": true,
+  "columns": ["product","quantity","unit_price","line_total"],
+  "rows": [
+    ["Designing Data Systems","1","45","45"],
+    ["Learning SQL","1","39.5","39.5"],
+    ["Mystery at Dawn","3","12.99","38.97"]
+  ]
+}

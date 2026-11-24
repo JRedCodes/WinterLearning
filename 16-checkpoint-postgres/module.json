@@ -1,0 +1,12 @@
+{
+  "id": "16",
+  "slug": "checkpoint-postgres",
+  "title": "Checkpoint: Postgres",
+  "phase": 2,
+  "phaseName": "Postgres",
+  "challengeType": "build",
+  "estimateHours": 8,
+  "services": ["postgres"],
+  "dependsOn": ["11", "12", "13", "14", "15"],
+  "summary": "Build an inventory and orders API from scratch on Postgres: migrations, atomic multi-line stock reservation, cancellations, keyset pagination, indexed search and a layered architecture."
+}

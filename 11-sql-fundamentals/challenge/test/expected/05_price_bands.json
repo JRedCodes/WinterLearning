@@ -1,0 +1,24 @@
+{
+  "ordered": true,
+  "columns": ["name","price","band"],
+  "rows": [
+    ["Gaming Laptop 16","1899","premium"],
+    ["Ultrabook 14","1299","premium"],
+    ["Smartphone X","799","premium"],
+    ["Standing Desk","549","premium"],
+    ["Espresso Machine","349","mid"],
+    ["Monitor 27","329","mid"],
+    ["Office Chair","299","mid"],
+    ["Budget Phone","199","mid"],
+    ["Chef Knife","89","mid"],
+    ["Mechanical Keyboard","89","mid"],
+    ["Gift Card","50","mid"],
+    ["Designing Data Systems","45","budget"],
+    ["Learning SQL","39.5","budget"],
+    ["USB-C Hub","39.5","budget"],
+    ["Wireless Mouse","29.99","budget"],
+    ["Laptop Sleeve","24","budget"],
+    ["The Long Winter","18.5","budget"],
+    ["Mystery at Dawn","12.99","budget"]
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "ordered": true,
+  "columns": ["name","price"],
+  "rows": [
+    ["Mystery at Dawn","12.99"],
+    ["The Long Winter","18.5"],
+    ["Wireless Mouse","29.99"],
+    ["Learning SQL","39.5"],
+    ["USB-C Hub","39.5"]
+  ]
+}

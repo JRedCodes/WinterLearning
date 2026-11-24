@@ -1,0 +1,59 @@
+# Snapshot of GET /metrics from pod checkout-6d8b9c-k2x4q (version 2.13.4) at 2026-10-14T13:50:00Z
+# Counters are cumulative since the pod started (2026-10-13T09:12:40Z).
+# HELP http_request_duration_seconds HTTP request latency in seconds
+# TYPE http_request_duration_seconds histogram
+http_request_duration_seconds_bucket{le="0.005",method="GET",route="/orders/:id",status_code="200"} 3120
+http_request_duration_seconds_bucket{le="0.01",method="GET",route="/orders/:id",status_code="200"} 8840
+http_request_duration_seconds_bucket{le="0.025",method="GET",route="/orders/:id",status_code="200"} 14980
+http_request_duration_seconds_bucket{le="0.05",method="GET",route="/orders/:id",status_code="200"} 15210
+http_request_duration_seconds_bucket{le="0.1",method="GET",route="/orders/:id",status_code="200"} 15230
+http_request_duration_seconds_bucket{le="0.25",method="GET",route="/orders/:id",status_code="200"} 15232
+http_request_duration_seconds_bucket{le="0.5",method="GET",route="/orders/:id",status_code="200"} 15232
+http_request_duration_seconds_bucket{le="1",method="GET",route="/orders/:id",status_code="200"} 15232
+http_request_duration_seconds_bucket{le="2.5",method="GET",route="/orders/:id",status_code="200"} 15232
+http_request_duration_seconds_bucket{le="5",method="GET",route="/orders/:id",status_code="200"} 15232
+http_request_duration_seconds_bucket{le="10",method="GET",route="/orders/:id",status_code="200"} 15232
+http_request_duration_seconds_bucket{le="+Inf",method="GET",route="/orders/:id",status_code="200"} 15232
+http_request_duration_seconds_sum{method="GET",route="/orders/:id",status_code="200"} 172.4
+http_request_duration_seconds_count{method="GET",route="/orders/:id",status_code="200"} 15232
+http_request_duration_seconds_bucket{le="0.005",method="POST",route="/checkout",status_code="201"} 0
+http_request_duration_seconds_bucket{le="0.01",method="POST",route="/checkout",status_code="201"} 0
+http_request_duration_seconds_bucket{le="0.025",method="POST",route="/checkout",status_code="201"} 0
+http_request_duration_seconds_bucket{le="0.05",method="POST",route="/checkout",status_code="201"} 0
+http_request_duration_seconds_bucket{le="0.1",method="POST",route="/checkout",status_code="201"} 1810
+http_request_duration_seconds_bucket{le="0.25",method="POST",route="/checkout",status_code="201"} 16420
+http_request_duration_seconds_bucket{le="0.5",method="POST",route="/checkout",status_code="201"} 18630
+http_request_duration_seconds_bucket{le="1",method="POST",route="/checkout",status_code="201"} 18702
+http_request_duration_seconds_bucket{le="2.5",method="POST",route="/checkout",status_code="201"} 18710
+http_request_duration_seconds_bucket{le="5",method="POST",route="/checkout",status_code="201"} 18710
+http_request_duration_seconds_bucket{le="10",method="POST",route="/checkout",status_code="201"} 18710
+http_request_duration_seconds_bucket{le="+Inf",method="POST",route="/checkout",status_code="201"} 18710
+http_request_duration_seconds_sum{method="POST",route="/checkout",status_code="201"} 3274.3
+http_request_duration_seconds_count{method="POST",route="/checkout",status_code="201"} 18710
+# HELP upstream_request_duration_seconds Latency of calls to other services
+# TYPE upstream_request_duration_seconds histogram
+upstream_request_duration_seconds_bucket{le="0.1",dependency="payments-gateway"} 2950
+upstream_request_duration_seconds_bucket{le="0.25",dependency="payments-gateway"} 19460
+upstream_request_duration_seconds_bucket{le="1",dependency="payments-gateway"} 20140
+upstream_request_duration_seconds_bucket{le="5",dependency="payments-gateway"} 20151
+upstream_request_duration_seconds_bucket{le="30",dependency="payments-gateway"} 20151
+upstream_request_duration_seconds_bucket{le="+Inf",dependency="payments-gateway"} 20151
+upstream_request_duration_seconds_sum{dependency="payments-gateway"} 3021.6
+upstream_request_duration_seconds_count{dependency="payments-gateway"} 20151
+# HELP upstream_inflight_requests Requests currently in flight to each dependency
+# TYPE upstream_inflight_requests gauge
+upstream_inflight_requests{dependency="payments-gateway"} 2
+# HELP checkouts_total Checkout attempts by outcome
+# TYPE checkouts_total counter
+checkouts_total{outcome="success"} 18710
+checkouts_total{outcome="declined"} 1441
+checkouts_total{outcome="error"} 3
+# HELP nodejs_eventloop_lag_seconds Lag of event loop in seconds.
+# TYPE nodejs_eventloop_lag_seconds gauge
+nodejs_eventloop_lag_seconds 0.0031
+# HELP process_resident_memory_bytes Resident memory size in bytes.
+# TYPE process_resident_memory_bytes gauge
+process_resident_memory_bytes 148897792
+# HELP process_cpu_seconds_total Total user and system CPU time spent in seconds.
+# TYPE process_cpu_seconds_total counter
+process_cpu_seconds_total 1893.21

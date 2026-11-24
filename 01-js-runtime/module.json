@@ -1,0 +1,12 @@
+{
+  "id": "01",
+  "slug": "js-runtime",
+  "title": "The JavaScript Runtime",
+  "phase": 0,
+  "phaseName": "Foundations",
+  "challengeType": "debug",
+  "estimateHours": 5,
+  "services": [],
+  "dependsOn": ["00"],
+  "summary": "The event loop, microtasks vs macrotasks, promises and async/await pitfalls, timeouts with AbortController, EventEmitter and streams, learned by fixing a buggy async report library."
+}

@@ -1,0 +1,12 @@
+{
+  "id": "35",
+  "slug": "kubernetes-in-practice",
+  "title": "Kubernetes in Practice",
+  "phase": 6,
+  "phaseName": "Event Streaming & Orchestration",
+  "challengeType": "debug",
+  "estimateHours": 7,
+  "services": [],
+  "dependsOn": ["34"],
+  "summary": "Debug a broken deployment from kubectl evidence, add an Ingress-fronted HPA and PodDisruptionBudget, and package the app as a Helm chart."
+}

@@ -1,0 +1,16 @@
+# TODO(3): Deployment `kudos-api`
+#   - 3 replicas, selector.matchLabels == pod template labels
+#   - RollingUpdate with maxUnavailable: 0 and maxSurge: 1
+#   - image wl-kudos-api:1.0.0 (the tag you build and `kind load`), imagePullPolicy IfNotPresent
+#   - containerPort 3000 named `http`
+#   - readinessProbe GET /readyz, livenessProbe GET /healthz (on port `http`)
+#   - resources: requests + limits for cpu and memory
+#   - env from the ConfigMap and the Secret
+#   - securityContext: runAsNonRoot + numeric runAsUser, no privilege escalation,
+#     read-only root filesystem, drop ALL capabilities
+#
+# ---
+#
+# TODO(4): Service `kudos-api`
+#   - type ClusterIP, port 80 -> targetPort http
+#   - selector matching ONLY the API pods

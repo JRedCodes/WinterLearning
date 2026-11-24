@@ -1,0 +1,12 @@
+{
+  "id": "32",
+  "slug": "kafka-fundamentals",
+  "title": "Kafka Fundamentals",
+  "phase": 6,
+  "phaseName": "Event Streaming & Orchestration",
+  "challengeType": "scaffold",
+  "estimateHours": 7,
+  "services": ["kafka"],
+  "dependsOn": ["20"],
+  "summary": "Topics, partitions, offsets, producers, consumer groups and delivery semantics: build a keyed order-events pipeline with an idempotent, manually committed projection consumer."
+}

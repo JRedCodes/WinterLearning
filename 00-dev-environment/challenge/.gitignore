@@ -1,0 +1,3 @@
+# TODO(3): tell git which files must never be committed in this project.
+# Think about: installed dependencies, build output, local secrets, OS/editor junk.
+# Careful: .env.example IS meant to be committed.

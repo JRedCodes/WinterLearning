@@ -1,0 +1,12 @@
+{
+  "id": "20",
+  "slug": "background-jobs",
+  "title": "Background Jobs & Queues",
+  "phase": 3,
+  "phaseName": "Redis & Async Work",
+  "challengeType": "scaffold",
+  "estimateHours": 6,
+  "services": ["redis"],
+  "dependsOn": ["17", "06"],
+  "summary": "Moving slow, failure-prone work off the request path with BullMQ: retries with exponential backoff and jitter, idempotent handlers for at-least-once delivery, dead-letter queues and graceful worker shutdown."
+}

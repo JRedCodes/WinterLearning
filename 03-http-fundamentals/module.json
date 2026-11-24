@@ -1,0 +1,12 @@
+{
+  "id": "03",
+  "slug": "http-fundamentals",
+  "title": "HTTP Fundamentals",
+  "phase": 0,
+  "phaseName": "Foundations",
+  "challengeType": "build",
+  "estimateHours": 5,
+  "services": [],
+  "dependsOn": ["02"],
+  "summary": "How HTTP really works (methods, status codes, headers, bodies, caching, connections, TLS) by building a REST server on bare node:http."
+}

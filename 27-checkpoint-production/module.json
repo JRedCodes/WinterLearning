@@ -1,0 +1,12 @@
+{
+  "id": "27",
+  "slug": "checkpoint-production",
+  "title": "Checkpoint: Production Readiness",
+  "phase": 4,
+  "phaseName": "Production Readiness",
+  "challengeType": "build",
+  "estimateHours": 8,
+  "services": ["postgres", "redis"],
+  "dependsOn": ["22", "19", "24", "25", "26"],
+  "summary": "Harden a bare notes API for production: session auth and ownership, login rate limiting, validation and safe errors, security headers, structured logs, metrics, health checks, graceful shutdown and a Dockerfile."
+}

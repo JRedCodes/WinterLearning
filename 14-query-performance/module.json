@@ -1,0 +1,12 @@
+{
+  "id": "14",
+  "slug": "query-performance",
+  "title": "Query Performance",
+  "phase": 2,
+  "phaseName": "Postgres",
+  "challengeType": "debug",
+  "estimateHours": 7,
+  "services": ["postgres"],
+  "dependsOn": ["13"],
+  "summary": "Reading EXPLAIN plans, designing B-tree indexes, killing N+1 queries and replacing OFFSET with keyset pagination."
+}

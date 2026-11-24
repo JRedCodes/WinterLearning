@@ -1,0 +1,12 @@
+{
+  "id": "05",
+  "slug": "express-basics",
+  "title": "Express Basics",
+  "phase": 1,
+  "phaseName": "Backend Core",
+  "challengeType": "scaffold",
+  "estimateHours": 6,
+  "services": [],
+  "dependsOn": ["03"],
+  "summary": "Routing, the middleware chain, the request/response lifecycle and centralized error handling in Express 5."
+}

@@ -1,0 +1,21 @@
+{
+  "ordered": true,
+  "columns": ["category","product","units_sold","rank"],
+  "rows": [
+    ["Accessories","Wireless Mouse","7","1"],
+    ["Accessories","Mechanical Keyboard","3","2"],
+    ["Accessories","USB-C Hub","3","2"],
+    ["Computers","Monitor 27","3","1"],
+    ["Fiction","Mystery at Dawn","5","1"],
+    ["Fiction","The Long Winter","3","2"],
+    ["Furniture","Office Chair","3","1"],
+    ["Furniture","Standing Desk","2","2"],
+    ["Kitchen","Chef Knife","3","1"],
+    ["Kitchen","Espresso Machine","2","2"],
+    ["Laptops","Ultrabook 14","2","1"],
+    ["Laptops","Gaming Laptop 16","1","2"],
+    ["Phones","Smartphone X","2","1"],
+    ["Programming","Designing Data Systems","3","1"],
+    ["Programming","Learning SQL","2","2"]
+  ]
+}

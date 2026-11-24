@@ -1,0 +1,9 @@
+{
+  "ordered": true,
+  "columns": ["domain","customers"],
+  "rows": [
+    ["example.com","5"],
+    ["example.org","4"],
+    ["example.net","3"]
+  ]
+}

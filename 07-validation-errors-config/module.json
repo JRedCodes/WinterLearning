@@ -1,0 +1,12 @@
+{
+  "id": "07",
+  "slug": "validation-errors-config",
+  "title": "Validation, Errors & Config",
+  "phase": 1,
+  "phaseName": "Backend Core",
+  "challengeType": "scaffold",
+  "estimateHours": 6,
+  "services": [],
+  "dependsOn": ["06"],
+  "summary": "Validate untrusted input at the edges with zod, model failures as a domain error hierarchy mapped to HTTP in one place, and load typed, fail-fast configuration from the environment."
+}

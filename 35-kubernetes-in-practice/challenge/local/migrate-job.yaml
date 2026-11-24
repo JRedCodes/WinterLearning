@@ -1,0 +1,47 @@
+# LOCAL ONLY: applies the schema to local/postgres.yaml. Same image as the API.
+# It reads DB_PASSWORD from the kudos-db Secret, so it will ALSO fail until you fix the
+# Secret key bug (check: kubectl -n kudos describe pod -l job-name=kudos-migrate).
+# Jobs are immutable: kubectl -n kudos delete job kudos-migrate before re-applying.
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: kudos-migrate
+  namespace: kudos
+spec:
+  backoffLimit: 4
+  template:
+    spec:
+      restartPolicy: Never
+      securityContext:
+        runAsNonRoot: true
+        runAsUser: 1000
+        runAsGroup: 1000
+        seccompProfile:
+          type: RuntimeDefault
+      initContainers:
+        - name: wait-for-postgres
+          image: postgres:16-alpine
+          command: ["sh", "-c", "until pg_isready -h \"$DB_HOST\" -p \"$DB_PORT\"; do echo waiting for postgres; sleep 2; done"]
+          envFrom:
+            - configMapRef: { name: kudos-config }
+          securityContext:
+            allowPrivilegeEscalation: false
+            capabilities: { drop: ["ALL"] }
+      containers:
+        - name: migrate
+          image: wl-kudos-api:1.0.0
+          imagePullPolicy: IfNotPresent
+          command: ["node", "dist/db/migrateCli.js"]
+          envFrom:
+            - configMapRef: { name: kudos-config }
+          env:
+            - name: DB_PASSWORD
+              valueFrom:
+                secretKeyRef: { name: kudos-db, key: DB_PASSWORD }
+          securityContext:
+            allowPrivilegeEscalation: false
+            readOnlyRootFilesystem: true
+            capabilities: { drop: ["ALL"] }
+          resources:
+            requests: { cpu: 50m, memory: 64Mi }
+            limits: { memory: 256Mi }

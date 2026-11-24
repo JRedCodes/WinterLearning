@@ -1,0 +1,12 @@
+{
+  // Used by `npm run build` (and therefore by the Dockerfile): compiles ONLY src/ into dist/.
+  // src/server.ts -> dist/server.js, src/db/migrateCli.ts -> dist/db/migrateCli.js, ...
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "rootDir": "src",
+    "outDir": "dist",
+    "noEmit": false,
+    "sourceMap": true
+  },
+  "include": ["src"]
+}

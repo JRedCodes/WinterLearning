@@ -1,0 +1,12 @@
+{
+  "id": "36",
+  "slug": "capstone-ticketing",
+  "title": "Capstone: Event Ticketing Platform",
+  "phase": 7,
+  "phaseName": "Capstone & Portfolio",
+  "challengeType": "build",
+  "estimateHours": 35,
+  "services": ["postgres", "redis", "kafka"],
+  "dependsOn": ["31", "33", "34", "R2"],
+  "summary": "Build a production-style ticketing platform end to end: auth, race-free seat holds and idempotent bookings, caching and rate limiting, an outbox to Kafka, queued notifications, a live seat map, deployment manifests and a design doc."
+}

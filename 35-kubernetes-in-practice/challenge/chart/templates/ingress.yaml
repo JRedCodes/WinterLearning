@@ -1,0 +1,4 @@
+# TODO(9b): the Ingress, only rendered when ingress is enabled in values.
+#   - optional ingressClassName (only when a className is set)
+#   - one rule for the host from values, path /, pathType Prefix
+#   - backend: this chart's Service, on the Service's port (the incident's bug 6, templated away)

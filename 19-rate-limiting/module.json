@@ -1,0 +1,12 @@
+{
+  "id": "19",
+  "slug": "rate-limiting",
+  "title": "Rate Limiting",
+  "phase": 3,
+  "phaseName": "Redis & Async Work",
+  "challengeType": "build",
+  "estimateHours": 5,
+  "services": ["redis"],
+  "dependsOn": ["17", "05"],
+  "summary": "Fixed window, sliding window and token bucket limiters made atomic with Redis + Lua, wrapped in Express middleware with standard headers and a deliberate fail-open/fail-closed policy."
+}

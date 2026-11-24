@@ -1,0 +1,51 @@
+$ kubectl -n kudos describe pod kudos-api-6d5f7c9b8-7xq2k
+Name:             kudos-api-6d5f7c9b8-7xq2k
+Namespace:        kudos
+Priority:         0
+Service Account:  default
+Node:             wl-control-plane/172.18.0.2
+Labels:           app=kudos-api
+                  app.kubernetes.io/part-of=kudos
+                  pod-template-hash=6d5f7c9b8
+Status:           Pending
+IP:               10.244.0.14
+Controlled By:    ReplicaSet/kudos-api-6d5f7c9b8
+Containers:
+  api:
+    Image:          wl-kudos-api:1.0.0
+    Port:           8080/TCP
+    Host Port:      0/TCP
+    State:          Waiting
+      Reason:       CreateContainerConfigError
+    Ready:          False
+    Restart Count:  0
+    Limits:
+      cpu:     500m
+      memory:  32Mi
+    Requests:
+      cpu:      100m
+      memory:   32Mi
+    Liveness:   http-get http://:3000/healthz delay=0s timeout=2s period=10s #success=1 #failure=3
+    Readiness:  http-get http://:3000/ready delay=0s timeout=3s period=5s #success=1 #failure=2
+    Startup:    http-get http://:3000/healthz delay=0s timeout=1s period=2s #success=1 #failure=30
+    Environment Variables from:
+      kudos-config  ConfigMap  Optional: false
+    Environment:
+      DB_PASSWORD:  <set to the key 'DB_PASSWORD' in secret 'kudos-db'>  Optional: false
+Conditions:
+  Type                        Status
+  PodReadyToStartContainers   True
+  Initialized                 True
+  Ready                       False
+  ContainersReady             False
+  PodScheduled                True
+QoS Class:                   Burstable
+Events:
+  Type     Reason     Age                    From               Message
+  ----     ------     ----                   ----               -------
+  Normal   Scheduled  4m30s                  default-scheduler  Successfully assigned kudos/kudos-api-6d5f7c9b8-7xq2k to wl-control-plane
+  Normal   Pulled     2m5s (x12 over 4m29s)  kubelet            Container image "wl-kudos-api:1.0.0" already present on machine
+  Warning  Failed     2m5s (x12 over 4m29s)  kubelet            Error: couldn't find key DB_PASSWORD in Secret kudos/kudos-db
+
+$ kubectl -n kudos get secret kudos-db -o jsonpath='{.data}'
+{"db-password":"bG9jYWwtZGV2LW9ubHktbm90LWEtcmVhbC1zZWNyZXQ="}

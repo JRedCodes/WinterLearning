@@ -1,0 +1,18 @@
+{
+  "ordered": true,
+  "columns": ["full_name","order_count"],
+  "rows": [
+    ["Alice Martin","4"],
+    ["Bob Chen","3"],
+    ["Carla Rossi","3"],
+    ["Emma Schmidt","3"],
+    ["Dev Patel","2"],
+    ["Farid Haddad","2"],
+    ["Hugo Lefevre","2"],
+    ["Ines Alves","2"],
+    ["Grace Kim","1"],
+    ["Jon Berg","0"],
+    ["Kai Weber","0"],
+    ["Lena Novak","0"]
+  ]
+}

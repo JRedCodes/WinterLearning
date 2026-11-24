@@ -1,0 +1,17 @@
+# TODO(1): Write a Docker Compose file for this module's local services.
+#
+# Requirements (the tests in test/compose.test.ts check each one):
+#   - Compose project name: wl-00                       (top-level `name:`)
+#   - No top-level `version:` key (it's obsolete in Compose v2)
+#   - Service `postgres`:
+#       image postgres:16-alpine
+#       env POSTGRES_USER=postgres, POSTGRES_PASSWORD=postgres, POSTGRES_DB=wl
+#       host port 5433 -> container port 5432
+#       a NAMED volume (declared under top-level `volumes:`) mounted at /var/lib/postgresql/data
+#       a healthcheck that uses pg_isready, with an interval
+#   - Service `redis`:
+#       image redis:7-alpine
+#       host port 6380 -> container port 6379
+#       a healthcheck that uses `redis-cli ping`, with an interval
+#
+# The lesson (README.md §6–7) and docs/docker-cheatsheet.md show every piece you need.

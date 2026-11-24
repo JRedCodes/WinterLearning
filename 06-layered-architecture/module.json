@@ -1,0 +1,12 @@
+{
+  "id": "06",
+  "slug": "layered-architecture",
+  "title": "Layered Architecture & Separation of Concerns",
+  "phase": 1,
+  "phaseName": "Backend Core",
+  "challengeType": "debug",
+  "estimateHours": 7,
+  "services": [],
+  "dependsOn": ["05"],
+  "summary": "Split an Express god file into routes, controllers, services, repositories and a domain core, wired together by dependency injection in a composition root."
+}

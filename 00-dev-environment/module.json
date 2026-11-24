@@ -1,0 +1,12 @@
+{
+  "id": "00",
+  "slug": "dev-environment",
+  "title": "Dev Environment & Workflow",
+  "phase": 0,
+  "phaseName": "Foundations",
+  "challengeType": "build",
+  "estimateHours": 3,
+  "services": ["postgres", "redis"],
+  "dependsOn": [],
+  "summary": "Terminal, git and PR workflow, nvm, npm and lockfiles, env config, Docker Compose with healthchecks and Makefiles: a one-command local setup."
+}

@@ -1,0 +1,12 @@
+{
+  "id": "15",
+  "slug": "transactions-concurrency",
+  "title": "Transactions & Concurrency",
+  "phase": 2,
+  "phaseName": "Postgres",
+  "challengeType": "debug",
+  "estimateHours": 7,
+  "services": ["postgres"],
+  "dependsOn": ["13"],
+  "summary": "ACID, isolation levels, MVCC, row locks, optimistic concurrency, deadlocks and idempotency keys: making a ticketing and wallet service correct under concurrent requests."
+}

@@ -1,0 +1,12 @@
+{
+  "id": "31",
+  "slug": "checkpoint-url-shortener",
+  "title": "Checkpoint: URL Shortener (end-to-end)",
+  "phase": 5,
+  "phaseName": "Systems & Scale",
+  "challengeType": "build",
+  "estimateHours": 10,
+  "services": ["postgres", "redis"],
+  "dependsOn": ["30", "18", "19", "20", "16"],
+  "summary": "Design and build a production-shaped URL shortener: base62 codes and aliases, a Redis-cached redirect path, async click analytics via a Redis Stream, per-key rate limits, expiry, health checks, and the DESIGN.md and DECISIONS.md to back it."
+}

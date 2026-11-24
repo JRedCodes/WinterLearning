@@ -1,0 +1,8 @@
+kudos-api {{ .Chart.AppVersion }} is deployed as release "{{ .Release.Name }}" in namespace "{{ .Release.Namespace }}".
+
+Watch the rollout:
+  kubectl -n {{ .Release.Namespace }} rollout status deployment/{{ include "kudos-api.fullname" . }}
+
+Reach it without the Ingress:
+  kubectl -n {{ .Release.Namespace }} port-forward svc/{{ include "kudos-api.fullname" . }} 8080:{{ .Values.service.port }}
+  curl -s localhost:8080/whoami

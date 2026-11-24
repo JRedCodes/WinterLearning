@@ -1,0 +1,12 @@
+{
+  "id": "17",
+  "slug": "redis-fundamentals",
+  "title": "Redis Fundamentals",
+  "phase": 3,
+  "phaseName": "Redis & Async Work",
+  "challengeType": "build",
+  "estimateHours": 5,
+  "services": ["redis"],
+  "dependsOn": ["05"],
+  "summary": "Redis as a data-structure server: strings, hashes, lists, sets, sorted sets, HyperLogLog and streams, plus TTLs, atomicity, MULTI/EXEC, pipelining and Lua."
+}

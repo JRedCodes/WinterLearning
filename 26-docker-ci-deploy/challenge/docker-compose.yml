@@ -1,0 +1,31 @@
+name: wl-26
+services:
+  # Used by `make up` for local dev and tests (host port 5433). Keep it as it is.
+  postgres:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: wl
+    ports: ["5433:5432"]
+    volumes: [pgdata:/var/lib/postgresql/data]
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 2s
+      timeout: 3s
+      retries: 20
+
+  # TODO(3): add two services so `make stack` runs a prod-like stack from your Dockerfile:
+  #
+  #  migrate: a one-off service built from the Dockerfile that runs the migrations
+  #           (node dist/db/migrateCli.js) once Postgres is healthy, then exits.
+  #
+  #  api:     built from the Dockerfile, published on host port 3000, starts only after
+  #           Postgres is healthy AND migrate completed successfully. Give it a
+  #           stop_grace_period longer than its SHUTDOWN_TIMEOUT_MS.
+  #
+  # Inside the compose network, Postgres is reachable at host `postgres`, port 5432
+  # (NOT localhost:5433, that's the port published on your machine).
+
+volumes:
+  pgdata:

@@ -1,0 +1,10 @@
+-- 001 · Extensions and shared helpers
+--
+-- TODO(1):
+--   - Enable the btree_gist extension (needed by the exclusion constraint on bookings,
+--     so that `room_id WITH =` can live in a GiST index next to a time range).
+--   - Create a trigger function `set_updated_at()` that sets NEW.updated_at = now()
+--     and returns NEW. Tables with an updated_at column will use it in a BEFORE UPDATE trigger.
+--
+-- Use idempotent-friendly statements where it's free (CREATE EXTENSION IF NOT EXISTS,
+-- CREATE OR REPLACE FUNCTION), but remember: the runner applies each file exactly once.

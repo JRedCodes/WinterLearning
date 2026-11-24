@@ -1,0 +1,12 @@
+{
+  "id": "11",
+  "slug": "sql-fundamentals",
+  "title": "SQL Fundamentals",
+  "phase": 2,
+  "phaseName": "Postgres",
+  "challengeType": "build",
+  "estimateHours": 7,
+  "services": ["postgres"],
+  "dependsOn": ["00"],
+  "summary": "Read and write data with confidence in Postgres: filtering, NULLs, joins, aggregation, subqueries, CTEs (including recursive), window functions and upserts, practised on a seeded e-commerce dataset."
+}

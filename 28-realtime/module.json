@@ -1,0 +1,12 @@
+{
+  "id": "28",
+  "slug": "realtime",
+  "title": "Real-time Systems",
+  "phase": 5,
+  "phaseName": "Systems & Scale",
+  "challengeType": "build",
+  "estimateHours": 6,
+  "services": ["redis"],
+  "dependsOn": ["17", "22"],
+  "summary": "Polling, SSE and WebSockets compared, then a multi-instance chat server with ws: auth on upgrade, rooms, heartbeats, backpressure, Redis pub/sub fan-out, history and gap-free resume."
+}

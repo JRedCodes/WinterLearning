@@ -1,0 +1,10 @@
+{
+  "ordered": true,
+  "columns": ["order_id","customer","items","units"],
+  "rows": [
+    ["15","Dev Patel","Smartphone X, USB-C Hub","2"],
+    ["16","Bob Chen","Gift Card","2"],
+    ["17","Farid Haddad","Chef Knife, Learning SQL","3"],
+    ["18","Alice Martin","Wireless Mouse","3"]
+  ]
+}

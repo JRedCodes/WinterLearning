@@ -1,0 +1,12 @@
+{
+  "id": "02",
+  "slug": "typescript-fundamentals",
+  "title": "TypeScript Fundamentals",
+  "phase": 0,
+  "phaseName": "Foundations",
+  "challengeType": "scaffold",
+  "estimateHours": 6,
+  "services": [],
+  "dependsOn": ["01"],
+  "summary": "Strict TypeScript from the ground up: structural typing, unions and narrowing, unknown/never, generics, literal types and ESM in Node, by porting a JS utility library."
+}

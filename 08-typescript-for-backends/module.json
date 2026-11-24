@@ -1,0 +1,12 @@
+{
+  "id": "08",
+  "slug": "typescript-for-backends",
+  "title": "TypeScript for Backends",
+  "phase": 1,
+  "phaseName": "Backend Core",
+  "challengeType": "debug",
+  "estimateHours": 6,
+  "services": [],
+  "dependsOn": ["02", "07"],
+  "summary": "Make the compiler catch backend bugs for you: branded ids, discriminated-union state machines, exhaustive checks, zod-derived types, typed Express and no escape hatches."
+}

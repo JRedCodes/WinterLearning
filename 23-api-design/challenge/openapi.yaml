@@ -1,0 +1,167 @@
+# TODO(1): Finish this OpenAPI 3.1 document BEFORE writing the task code.
+#
+# The projects endpoints are partly written as an example of the style we use.
+# Your job (see CHALLENGE.md for the product requirements):
+#   - add the Problem schema (RFC 9457) and use it, via $ref, for EVERY 4xx response
+#     with media type application/problem+json (also the missing ones on projects)
+#   - add the task operations: listProjectTasks, createTask, getTask, updateTask, deleteTask
+#   - add the task schemas: Task, NewTask, TaskPatch, TaskList (+ anything you want to share)
+#   - document headers: Location (201), ETag, Idempotency-Key, If-Match, If-None-Match
+#
+# test/openapi.test.ts checks the structure; the other tests validate the real
+# responses of the app against the schemas you write here. Run
+#   make lint-spec
+# while you work on it.
+openapi: 3.1.0
+info:
+  title: WinterLearning Tasks API
+  version: 1.0.0
+  summary: Projects and the tasks inside them.
+servers:
+  - url: http://localhost:3000
+    description: Local development
+
+paths:
+  /v1/projects:
+    get:
+      operationId: listProjects
+      summary: List projects, oldest first
+      parameters:
+        - $ref: "#/components/parameters/Limit"
+        - $ref: "#/components/parameters/Cursor"
+      responses:
+        "200":
+          description: A page of projects
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ProjectList"
+        # TODO: 400
+    post:
+      operationId: createProject
+      summary: Create a project
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/NewProject"
+      responses:
+        "201":
+          description: Created
+          headers:
+            Location:
+              $ref: "#/components/headers/Location"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Project"
+        # TODO: 400
+
+  /v1/projects/{projectId}:
+    parameters:
+      - $ref: "#/components/parameters/ProjectId"
+    get:
+      operationId: getProject
+      summary: Get one project
+      responses:
+        "200":
+          description: The project
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Project"
+        # TODO: 404
+
+  # TODO: /v1/projects/{projectId}/tasks  (get: listProjectTasks, post: createTask)
+  # TODO: /v1/tasks/{taskId}              (get: getTask, patch: updateTask, delete: deleteTask)
+
+components:
+  parameters:
+    ProjectId:
+      name: projectId
+      in: path
+      required: true
+      schema:
+        type: string
+    Limit:
+      name: limit
+      in: query
+      description: Page size.
+      schema:
+        type: integer
+        minimum: 1
+        maximum: 100
+        default: 20
+    Cursor:
+      name: cursor
+      in: query
+      description: Opaque cursor from a previous page's `page.nextCursor`.
+      schema:
+        type: string
+
+  headers:
+    Location:
+      description: URL of the created resource.
+      schema:
+        type: string
+
+  schemas:
+    Project:
+      type: object
+      additionalProperties: false
+      required: [id, name, description, createdAt]
+      properties:
+        id:
+          type: string
+          format: uuid
+        name:
+          type: string
+          minLength: 1
+          maxLength: 100
+        description:
+          type: string
+          maxLength: 1000
+        createdAt:
+          type: string
+          format: date-time
+
+    NewProject:
+      type: object
+      additionalProperties: false
+      required: [name]
+      properties:
+        name:
+          type: string
+          minLength: 1
+          maxLength: 100
+        description:
+          type: string
+          maxLength: 1000
+
+    ProjectList:
+      type: object
+      additionalProperties: false
+      required: [data, page]
+      properties:
+        data:
+          type: array
+          items:
+            $ref: "#/components/schemas/Project"
+        page:
+          $ref: "#/components/schemas/PageInfo"
+
+    PageInfo:
+      type: object
+      additionalProperties: false
+      required: [limit, nextCursor]
+      properties:
+        limit:
+          type: integer
+          minimum: 1
+          maximum: 100
+        nextCursor:
+          description: Pass as `?cursor=` to get the next page; `null` on the last page.
+          type: [string, "null"]
+
+    # TODO: TaskStatus, TaskPriority, Task, NewTask, TaskPatch, TaskList, Problem

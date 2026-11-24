@@ -1,0 +1,9 @@
+-- 003 · Rooms, bookings and attendees
+--
+-- TODO(3): create `rooms`, `bookings` and `booking_attendees` as specified in CHALLENGE.md,
+-- including:
+--   - room names unique per organization among rooms that are NOT soft-deleted
+--   - bookings must end after they start
+--   - no two CONFIRMED bookings of the same room may overlap (exclusion constraint);
+--     back-to-back bookings (one ends 10:00, next starts 10:00) are allowed
+--   - the updated_at trigger on bookings

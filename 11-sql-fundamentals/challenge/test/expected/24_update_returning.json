@@ -1,0 +1,8 @@
+{
+  "ordered": false,
+  "columns": ["id","name","price"],
+  "rows": [
+    ["10","Standing Desk","603.9"],
+    ["11","Office Chair","328.9"]
+  ]
+}

@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>wl-28 chat demo</title>
+  <style>
+    body { font: 15px/1.4 system-ui, sans-serif; max-width: 720px; margin: 2rem auto; padding: 0 1rem; }
+    #log { border: 1px solid #ccc; height: 320px; overflow-y: auto; padding: .5rem; white-space: pre-wrap; font-family: ui-monospace, monospace; font-size: 13px; }
+    input { padding: .3rem; } button { padding: .3rem .7rem; }
+    .row { display: flex; gap: .5rem; margin: .5rem 0; }
+  </style>
+</head>
+<body>
+  <h1>Chat demo</h1>
+  <p>Get a token with <code>npm run token -- alice</code>. Open this page on two instances (ports 3000 and 3001) to watch messages cross through Redis.</p>
+  <div class="row">
+    <input id="token" placeholder="token" size="40" />
+    <input id="room" value="general" size="12" />
+    <button id="connect">Connect + join</button>
+  </div>
+  <div id="log"></div>
+  <div class="row">
+    <input id="text" placeholder="say something" size="50" />
+    <button id="send">Send</button>
+  </div>
+  <script type="module">
+    const $ = (id) => document.getElementById(id);
+    const log = (line) => { $("log").textContent += line + "\n"; $("log").scrollTop = 1e9; };
+    let ws;
+    $("connect").onclick = () => {
+      ws?.close();
+      const url = new URL("/ws", location.href);
+      url.protocol = location.protocol === "https:" ? "wss:" : "ws:";
+      url.searchParams.set("token", $("token").value.trim());
+      ws = new WebSocket(url);
+      ws.onopen = () => ws.send(JSON.stringify({ type: "join", room: $("room").value }));
+      ws.onmessage = (e) => {
+        const m = JSON.parse(e.data);
+        if (m.type === "message") log(`#${m.message.id} ${m.message.user}: ${m.message.text}`);
+        else if (m.type === "joined") { log(`joined ${m.room}`); m.history.forEach((h) => log(`#${h.id} ${h.user}: ${h.text}`)); }
+        else log(JSON.stringify(m));
+      };
+      ws.onclose = (e) => log(`closed (${e.code}${e.reason ? " " + e.reason : ""})`);
+    };
+    $("send").onclick = () => {
+      ws?.send(JSON.stringify({ type: "message", room: $("room").value, text: $("text").value }));
+      $("text").value = "";
+    };
+  </script>
+</body>
+</html>

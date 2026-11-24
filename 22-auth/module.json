@@ -1,0 +1,12 @@
+{
+  "id": "22",
+  "slug": "auth",
+  "title": "Authentication & Authorization",
+  "phase": 4,
+  "phaseName": "Production Readiness",
+  "challengeType": "build",
+  "estimateHours": 8,
+  "services": ["postgres", "redis"],
+  "dependsOn": ["07", "13", "17"],
+  "summary": "Password hashing, Redis-backed cookie sessions, JWTs and their pitfalls, RBAC and ownership checks, and fixing four classic auth vulnerabilities in a legacy service."
+}

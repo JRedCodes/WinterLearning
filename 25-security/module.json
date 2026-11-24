@@ -1,0 +1,12 @@
+{
+  "id": "25",
+  "slug": "security",
+  "title": "Web Security",
+  "phase": 4,
+  "phaseName": "Production Readiness",
+  "challengeType": "debug",
+  "estimateHours": 6,
+  "services": ["postgres"],
+  "dependsOn": ["13", "22"],
+  "summary": "The OWASP Top 10 applied to Node/Express: find and fix SQL injection, path traversal, SSRF, mass assignment, prototype pollution, ReDoS, permissive CORS and missing security headers in a vulnerable file-sharing API."
+}

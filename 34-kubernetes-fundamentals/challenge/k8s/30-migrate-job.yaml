@@ -1,0 +1,11 @@
+# TODO(6): Job `kudos-migrate` that applies the SQL migrations once.
+#
+#   - same image (and imagePullPolicy) as the API Deployment
+#   - command: node dist/db/migrateCli.js
+#   - same DB env as the API (ConfigMap + Secret)
+#   - restartPolicy Never (or OnFailure) and a small backoffLimit: Postgres may still be
+#     starting on the first attempt, so a few retries are expected
+#   - non-root securityContext like the API
+#
+# Note: a Job's pod template is immutable. To re-run it: kubectl delete job kudos-migrate,
+# then apply again (or add ttlSecondsAfterFinished so finished Jobs clean themselves up).

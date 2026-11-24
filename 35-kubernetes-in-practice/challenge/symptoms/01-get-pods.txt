@@ -1,0 +1,11 @@
+$ kubectl -n kudos get deploy,rs,pods
+NAME                        READY   UP-TO-DATE   AVAILABLE   AGE
+deployment.apps/kudos-api   0/2     2            0           4m12s
+
+NAME                                   DESIRED   CURRENT   READY   AGE
+replicaset.apps/kudos-api-6d5f7c9b8    2         2         0       4m12s
+
+NAME                             READY   STATUS                       RESTARTS   AGE
+pod/kudos-api-6d5f7c9b8-7xq2k    0/1     CreateContainerConfigError   0          4m12s
+pod/kudos-api-6d5f7c9b8-m4wzp    0/1     CreateContainerConfigError   0          4m12s
+pod/postgres-0                   1/1     Running                      0          31m

@@ -1,0 +1,8 @@
+{
+  "ordered": false,
+  "columns": ["email"],
+  "rows": [
+    ["dev@example.com"],
+    ["ines@example.org"]
+  ]
+}

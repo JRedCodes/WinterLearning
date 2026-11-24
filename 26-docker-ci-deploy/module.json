@@ -1,0 +1,12 @@
+{
+  "id": "26",
+  "slug": "docker-ci-deploy",
+  "title": "Docker, CI & Deployment",
+  "phase": 4,
+  "phaseName": "Production Readiness",
+  "challengeType": "build",
+  "estimateHours": 6,
+  "services": ["postgres"],
+  "dependsOn": ["00", "13", "24"],
+  "summary": "Ship a working API: a multi-stage non-root Docker image, a prod-like compose stack with a migration step, a CI pipeline, and graceful shutdown that drains in-flight requests."
+}
